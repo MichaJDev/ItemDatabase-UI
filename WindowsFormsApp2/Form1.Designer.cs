@@ -63,6 +63,7 @@
             this.dbBtn.TabIndex = 0;
             this.dbBtn.Text = "Database";
             this.dbBtn.UseVisualStyleBackColor = true;
+            this.dbBtn.Click += new System.EventHandler(this.dbBtn_Click);
             // 
             // addItemBtn
             // 
@@ -311,7 +312,8 @@
             this.Controls.Add(this.addItemBtn);
             this.Controls.Add(this.dbBtn);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Item Database UI";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

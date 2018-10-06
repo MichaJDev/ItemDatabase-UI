@@ -13,13 +13,12 @@ namespace WindowsFormsApp2
     public partial class Form1 : Form
     {
         DBConnect db = new DBConnect();
-        Form form2;
+        Form form2 = new Form2();
         int stam, str, intl, agi, has, mas = 0;
         public Form1()
         {
             InitializeComponent();
-            //Database 
-            db.OpenConnection();
+            
         }
         //Event Handler adding item to database
         private void addItemBtn_Click(object sender, EventArgs e)
@@ -37,7 +36,7 @@ namespace WindowsFormsApp2
                 {
                     validateChecked(typeNames[i], checkedStats[i]);
                 }
-
+                //itemDB.AddItem();
                 clearAll();
             }
         }
@@ -118,6 +117,11 @@ namespace WindowsFormsApp2
         }
 
         private void itemDBBtn_Click(object sender, EventArgs e)
+        {
+            form2.Visible = true;
+        }
+
+        private void dbBtn_Click(object sender, EventArgs e)
         {
             form2.Visible = true;
         }

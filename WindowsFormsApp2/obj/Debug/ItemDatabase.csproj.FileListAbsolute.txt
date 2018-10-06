@@ -19,3 +19,15 @@ C:\Users\xflak\OneDrive\Documenten\GitHub\ItemDatabase-UI\WindowsFormsApp2\obj\D
 C:\Users\xflak\OneDrive\Documenten\GitHub\ItemDatabase-UI\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.pdb
 C:\Users\xflak\OneDrive\Documenten\GitHub\ItemDatabase-UI\WindowsFormsApp2\bin\Debug\MySql.Data.dll
 C:\Users\xflak\OneDrive\Documenten\GitHub\ItemDatabase-UI\WindowsFormsApp2\obj\Debug\ItemDatabase.csproj.CopyComplete
+C:\Users\Vyx\Documents\GitHub\ItemDatabase-UI\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.exe.config
+C:\Users\Vyx\Documents\GitHub\ItemDatabase-UI\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.exe
+C:\Users\Vyx\Documents\GitHub\ItemDatabase-UI\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.pdb
+C:\Users\Vyx\Documents\GitHub\ItemDatabase-UI\WindowsFormsApp2\obj\Debug\ItemDatabase.csprojAssemblyReference.cache
+C:\Users\Vyx\Documents\GitHub\ItemDatabase-UI\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Form1.resources
+C:\Users\Vyx\Documents\GitHub\ItemDatabase-UI\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Properties.Resources.resources
+C:\Users\Vyx\Documents\GitHub\ItemDatabase-UI\WindowsFormsApp2\obj\Debug\ItemDatabase.csproj.GenerateResource.cache
+C:\Users\Vyx\Documents\GitHub\ItemDatabase-UI\WindowsFormsApp2\obj\Debug\ItemDatabase.csproj.CoreCompileInputs.cache
+C:\Users\Vyx\Documents\GitHub\ItemDatabase-UI\WindowsFormsApp2\obj\Debug\ItemDatabase.csproj.CopyComplete
+C:\Users\Vyx\Documents\GitHub\ItemDatabase-UI\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.exe
+C:\Users\Vyx\Documents\GitHub\ItemDatabase-UI\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.pdb
+C:\Users\Vyx\Documents\GitHub\ItemDatabase-UI\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Form2.resources
