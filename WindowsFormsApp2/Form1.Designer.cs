@@ -47,10 +47,10 @@
             this.itemMas = new System.Windows.Forms.TextBox();
             this.itemHas = new System.Windows.Forms.TextBox();
             this.itemAgi = new System.Windows.Forms.TextBox();
-            this.itemDesc = new System.Windows.Forms.TextBox();
+            this.itemName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.itemName = new System.Windows.Forms.TextBox();
+            this.itemDesc = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -240,12 +240,12 @@
             this.itemAgi.TabIndex = 18;
             this.itemAgi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.itemAgi_KeyPress);
             // 
-            // itemDesc
+            // itemName
             // 
-            this.itemDesc.Location = new System.Drawing.Point(18, 130);
-            this.itemDesc.Name = "itemDesc";
-            this.itemDesc.Size = new System.Drawing.Size(254, 20);
-            this.itemDesc.TabIndex = 21;
+            this.itemName.Location = new System.Drawing.Point(18, 88);
+            this.itemName.Name = "itemName";
+            this.itemName.Size = new System.Drawing.Size(254, 20);
+            this.itemName.TabIndex = 21;
             // 
             // label3
             // 
@@ -265,12 +265,12 @@
             this.label4.TabIndex = 24;
             this.label4.Text = "Item Name";
             // 
-            // itemName
+            // itemDesc
             // 
-            this.itemName.Location = new System.Drawing.Point(18, 88);
-            this.itemName.Name = "itemName";
-            this.itemName.Size = new System.Drawing.Size(254, 20);
-            this.itemName.TabIndex = 23;
+            this.itemDesc.Location = new System.Drawing.Point(18, 127);
+            this.itemDesc.Name = "itemDesc";
+            this.itemDesc.Size = new System.Drawing.Size(254, 20);
+            this.itemDesc.TabIndex = 23;
             // 
             // pictureBox1
             // 
@@ -289,9 +289,9 @@
             this.ClientSize = new System.Drawing.Size(293, 336);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.itemName);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.itemDesc);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.itemName);
             this.Controls.Add(this.itemMas);
             this.Controls.Add(this.itemHas);
             this.Controls.Add(this.itemAgi);
@@ -338,10 +338,10 @@
         private System.Windows.Forms.TextBox itemMas;
         private System.Windows.Forms.TextBox itemHas;
         private System.Windows.Forms.TextBox itemAgi;
-        private System.Windows.Forms.TextBox itemDesc;
+        private System.Windows.Forms.TextBox itemName;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox itemName;
+        private System.Windows.Forms.TextBox itemDesc;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

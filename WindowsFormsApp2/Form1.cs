@@ -12,21 +12,19 @@ namespace WindowsFormsApp2
 {
     public partial class Form1 : Form
     {
-        //Item item = new Item();
-        //ItemDB iDB;
+        DBConnect db = new DBConnect();
         Form form2;
         int stam, str, intl, agi, has, mas = 0;
         public Form1()
         {
             InitializeComponent();
-            //form2 = new Form2();
-            //iDB = new ItemDB();
+            //Database 
+            db.OpenConnection();
         }
-
+        //Event Handler adding item to database
         private void addItemBtn_Click(object sender, EventArgs e)
         {
-            int itemID = 0;
-            if (isTextBoxNull(itemName) == 0 || isTextBoxNull(itemDesc) == 0)
+            if (isTextBoxNull(itemDesc) == 0 || isTextBoxNull(itemName) == 0)
             {
                 MessageBox.Show("MissingArgumentsError: You haven't filled in all the options");
             }
@@ -39,21 +37,21 @@ namespace WindowsFormsApp2
                 {
                     validateChecked(typeNames[i], checkedStats[i]);
                 }
-                //item.addItem(itemID += 1, itemName.Text, itemDesc.Text, itemType.Text, itemWorth.Text, stam, str, intl, agi, mas, has);
+
                 clearAll();
             }
         }
 
-        private void itemType_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        //Getting Itemtype
         public String getItemType(int itemID)
         {
             return itemType.GetItemText(itemID).ToString();
         }
-
+        /*
+         * 
+         *  Making sure Textboxes only allow Ints or doubles
+         * 
+         */
         private void itemStam_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
@@ -113,7 +111,7 @@ namespace WindowsFormsApp2
                 e.Handled = true;
             }
         }
-
+        //When loads make Database window disabled.
         private void ItemDatabase_Load(object sender, EventArgs e)
         {
             form2.Visible = false;
@@ -192,8 +190,8 @@ namespace WindowsFormsApp2
             agi = 0;
             has = 0;
             mas = 0;
-            itemName.Clear();
             itemDesc.Clear();
+            itemName.Clear();
             itemStam.Clear();
             itemStr.Clear();
             itemInt.Clear();
