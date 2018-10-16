@@ -54,8 +54,7 @@ namespace WindowsFormsApp2
 
         public void Insert(string itemName, string itemDesc, string itemType, string itemWorth, int stam, int str, int intl, int agi, int has, int mas)
         {
-            string query = "INSERT INTO tableinfo (itemName, itemDesc, itemType,itemWorth,stamina,strength,intellect,agility,haste,mastery) VALUES('" + itemName + "', '" + itemDesc + "','" + itemType + "','" + itemWorth + "','" + stam + "')";
-
+            string query = "INSERT INTO tableinfo (ItemName, ItemDesc, ItemType,ItemWorth,Stamina,Strength,Intellect,Agility,Haste,Mastery) VALUES('" + itemName + "', '" + itemDesc + "','" + itemType + "','" + itemWorth + "','" + stam + "')";
             //open connection
             if (this.OpenConnection() == true)
             {
@@ -63,7 +62,7 @@ namespace WindowsFormsApp2
                 MySqlCommand cmd = new MySqlCommand(query, connection);
 
                 //Execute command
-                cmd.ExecuteNonQuery();
+                cmd.BeginExecuteNonQuery();
 
                 //close connection
                 this.CloseConnection();
@@ -73,14 +72,16 @@ namespace WindowsFormsApp2
 
         public int getRowCount()
         {
-            string query = "select count(*) from Items";
+
+            string query = "select count(*) from item";
             int count = 0;
             if (this.OpenConnection() == true)
             {
                 //create command and assign the query and connection from the constructor
-                MySqlCommand cmd = new MySqlCommand(query);
-                MySqlDataReader reader = cmd.ExecuteReader();
-                count = (Int32)cmd.ExecuteScalar();
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+           
+                count = Convert.ToInt32(cmd.ExecuteScalar());
+                this.CloseConnection();
 
             }
             return count;
@@ -90,10 +91,10 @@ namespace WindowsFormsApp2
         public bool checkItemTable()
         {
             bool tableExists = false;
-            string query = "SELECT COUNT(*) FROM information_schema.tables WHERE table_schema = \'Test\' AND table_name = \'Items]\'";
+            string query = "SELECT COUNT(*) FROM information_schema.tables WHERE table_schema = \'test\' AND table_name = \'item]\'";
             if (this.OpenConnection() == true)
             {
-                MySqlCommand cmd = new MySqlCommand(query);
+                MySqlCommand cmd = new MySqlCommand(query, connection);
                 MySqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
@@ -107,16 +108,17 @@ namespace WindowsFormsApp2
                         tableExists = true;
                     }
                 }
+                reader.Close();
                 this.CloseConnection();
             }
             return tableExists;
         }
         public void createItemTable()
         {
-            string query = "CREATE TABLE Items (ID int NOT NULL PRIMARY KEY AUTO_INCREMENT,ItemName varchar(255) NOT NULL,ItemDesc varchar(255),ItemType varchar(255) NOT NULL,ItemWorth varchar(255) NOT NULL,Stamina int,Strength int,Intellect int,Agility int,Haste int,Mastery int); ";
+            string query = "CREATE TABLE item (ID int NOT NULL PRIMARY KEY AUTO_INCREMENT,ItemName varchar(255) NOT NULL,ItemDesc varchar(255),ItemType varchar(255) NOT NULL,ItemWorth varchar(255) NOT NULL,Stamina int,Strength int,Intellect int,Agility int,Haste int,Mastery int); ";
             if (this.OpenConnection() == true)
             {
-                MySqlCommand cmd = new MySqlCommand(query);
+                MySqlCommand cmd = new MySqlCommand(query, connection);
                 this.CloseConnection();
             }
         }
