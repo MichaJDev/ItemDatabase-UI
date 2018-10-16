@@ -313,7 +313,6 @@
             this.Controls.Add(this.dbBtn);
             this.Name = "Form1";
             this.Text = "Item Database UI";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

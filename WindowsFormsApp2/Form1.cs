@@ -13,12 +13,17 @@ namespace WindowsFormsApp2
     public partial class Form1 : Form
     {
         DBConnect db = new DBConnect();
+        ItemDB item = new ItemDB();
         Form form2 = new Form2();
         int stam, str, intl, agi, has, mas = 0;
+        int count = 0;
         public Form1()
         {
             InitializeComponent();
-            
+            if(db.checkItemTable() == true)
+            {
+                db.createItemTable();
+            }
         }
         //Event Handler adding item to database
         private void addItemBtn_Click(object sender, EventArgs e)
@@ -36,7 +41,14 @@ namespace WindowsFormsApp2
                 {
                     validateChecked(typeNames[i], checkedStats[i]);
                 }
-                //itemDB.AddItem();
+                
+                item.addItem(itemName.Text,itemDesc.Text,itemType.Text,itemWorth.Text,stam,str,intl,agi,has,mas);
+                int countNew = db.getRowCount();
+                if(countNew > count)
+                {
+                    MessageBox.Show("Item added! Items in Database: \nOld: "+ count + "\n New: " + countNew);
+                    count = countNew;
+                }
                 clearAll();
             }
         }
@@ -114,6 +126,7 @@ namespace WindowsFormsApp2
         private void ItemDatabase_Load(object sender, EventArgs e)
         {
             form2.Visible = false;
+            count = db.getRowCount();
         }
 
         private void itemDBBtn_Click(object sender, EventArgs e)
