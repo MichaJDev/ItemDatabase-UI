@@ -44,9 +44,9 @@ namespace WindowsFormsApp2
                 
                 item.addItem(itemName.Text,itemDesc.Text,itemType.Text,itemWorth.Text,stam,str,intl,agi,has,mas);
                 int countNew = db.getRowCount();
-                if(countNew > count)
+                if(countNew >= count)
                 {
-                    MessageBox.Show("Item added! Items in Database: \nOld: "+ count + "\n New: " + countNew);
+                    MessageBox.Show("Item added! Items in Database: \nOld: "+ count + "\nNew: " + countNew);
                     count = countNew;
                 }
                 clearAll();
